@@ -1,0 +1,177 @@
+/* Tema padrão e rolagem independente da conversa. */
+:root,
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --bg: #111923;
+  --surface: #192331;
+  --surface-soft: #16202e;
+  --ink: #dde6f3;
+  --muted: #8192aa;
+  --border: #29364a;
+  --shadow: none;
+  background: var(--bg);
+  color: var(--ink);
+}
+body {
+  background: var(--bg);
+  color: var(--ink);
+}
+.brand {
+  margin-bottom: 14px;
+}
+.chat-mode .page-chat {
+  animation: none;
+}
+.message-area {
+  position: relative;
+  display: flex;
+  flex: 1;
+  min-height: 0;
+  overflow: hidden;
+}
+.message-area .messages {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+  overflow-x: hidden;
+  overflow-y: auto;
+  overscroll-behavior-y: contain;
+  overflow-anchor: none;
+  scroll-behavior: auto;
+  scrollbar-gutter: stable;
+}
+.conversation-top,
+.conversation-notice,
+.composer {
+  flex-shrink: 0;
+}
+.btn.latest-messages {
+  position: absolute;
+  bottom: 14px;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+  min-height: 34px;
+  font-size: 11px;
+  color: #d8e7ff;
+  background: #263f63;
+  border-color: #466a9b;
+  box-shadow: 0 5px 18px #0004;
+}
+.message p {
+  overflow-wrap: anywhere;
+}
+@media (min-width: 761px) {
+  .app-shell.chat-mode {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .chat-mode .main-shell {
+    height: 100dvh;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .chat-mode .topbar {
+    flex-shrink: 0;
+  }
+  .chat-mode .page-chat {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
+    padding-bottom: 22px;
+  }
+  .page-chat > .page-heading {
+    flex-shrink: 0;
+    margin-bottom: 20px;
+  }
+  .chat-mode .inbox-grid {
+    display: grid;
+    grid-template-columns: 205px minmax(0, 1fr) 245px;
+    flex: 1;
+    height: auto;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .chat-mode .conversation-list,
+  .chat-mode .conversation-pane {
+    height: 100%;
+    min-width: 0;
+    min-height: 0;
+    overflow: hidden;
+  }
+  .chat-mode .conversation-contacts {
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+  }
+  .chat-mode .contact-details {
+    display: block;
+    grid-column: auto;
+    grid-row: auto;
+    height: 100%;
+    min-height: 0;
+    overflow-y: auto;
+    overscroll-behavior: contain;
+    border-top: 0;
+    border-left: 1px solid var(--border);
+  }
+  .chat-mode .contact-details .notes-form {
+    margin-top: 20px;
+    border-top: 1px solid var(--border);
+  }
+  .chat-mode .app-footer {
+    display: none;
+  }
+}
+@media (min-width: 1500px) {
+  .chat-mode .inbox-grid {
+    grid-template-columns: 250px minmax(0, 1fr) 290px;
+  }
+}
+@media (min-width: 761px) and (max-width: 1100px) {
+  .chat-mode .inbox-grid {
+    grid-template-columns: 160px minmax(0, 1fr) 190px;
+  }
+  .chat-mode .conversation-top {
+    flex-wrap: wrap;
+    padding: 12px;
+  }
+  .chat-mode .contact-details {
+    padding: 13px;
+  }
+  .chat-mode .composer {
+    padding: 10px 12px;
+  }
+}
+@media (max-width: 760px) {
+  .chat-mode .inbox-grid {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  .chat-mode .conversation-list {
+    height: 170px;
+    min-height: 170px;
+    flex: none;
+  }
+  .chat-mode .conversation-pane {
+    height: 65dvh;
+    min-height: 420px;
+    flex: none;
+  }
+  .chat-mode .contact-details {
+    display: block;
+    height: auto;
+    overflow: visible;
+  }
+  .chat-mode .conversation-top {
+    flex-wrap: wrap;
+  }
+  .btn.latest-messages {
+    font-size: 10px;
+  }
+}

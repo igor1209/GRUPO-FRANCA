@@ -1,0 +1,13 @@
+.sidebar .brand {background:transparent!important;border:0;padding:0 16px 20px;}
+.sidebar .official-logo,.official-logo {background:transparent!important;mix-blend-mode:screen;}
+.sidebar nav .nav-submenu {margin:0 0 8px 20px;padding-left:10px;border-left:1px solid #35353a;}
+.sidebar nav .nav-submenu button {height:34px;font-size:12px;margin:2px 0;padding-left:12px;}
+.sidebar nav .group-selected {outline:1px solid #b494f5;outline-offset:-1px;}
+.sidebar nav .nav-group>button>svg:last-child {margin-left:auto;transition:transform .15s;}
+.sidebar nav .chevron-open {transform:rotate(180deg);}
+.channel-contact {display:flex;align-items:center;justify-content:space-between;gap:14px;padding:16px 0;border-bottom:1px solid #29292e;}
+.channel-contact:last-child {border-bottom:0;}
+.channel-contact b,.channel-contact small {display:block;}
+.channel-contact small {margin-top:5px;}
+a.btn {text-decoration:none;}
+@media(max-width:760px){.channel-contact {flex-wrap:wrap;}}
