@@ -318,6 +318,13 @@ def home():
         return JSONResponse({'error':'Interface não compilada. Execute configurar.bat antes de iniciar.'},503)
     return FileResponse(DIST/'index.html',headers={'Cache-Control':'no-store'})
 
+@app.get('/voice-capture.js')
+def voice_capture_script():
+    script = DIST/'voice-capture.js'
+    if not script.is_file():
+        return JSONResponse({'error':'Script de captura de voz não compilado.'},404)
+    return FileResponse(script,media_type='text/javascript',headers={'Cache-Control':'no-cache'})
+
 
 @app.get('/api/whatsapp')
 def whatsapp_connections(request: Request):
